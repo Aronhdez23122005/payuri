@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Ti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            background-color: #811c3b; /* Fondo guinda */
+            color: #f9f9f9; /* Texto claro */
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #811c3b; /* Fondo guinda */
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .title {
+            color: #fbe9ee; /* Tono claro */
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+        }
+
+        h2,
+        h3 {
+            color: #fbe9ee; /* Tono claro */
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        p {
+            color: #ffc4d6; /* Tono más claro */
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            color: #ffc4d6;
+            font-size: 1.2rem;
+        }
+
+        .image-container img {
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+            margin: 10px auto;
+        }
+
+        button {
+            background-color: #fbe9ee; /* Fondo claro */
+            color: #811c3b; /* Texto oscuro */
+            border: 2px solid #811c3b;
+            padding: 10px 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b94d6f; /* Fondo guinda intermedio */
+            color: #ffffff; /* Texto blanco */
+        }
+
+        /* Fondo guinda para los cuadros en la tabla */
+        table td {
+            background-color: #811c3b; /* Fondo guinda */
+            border: 2px solid #fbe9ee; /* Bordes claros */
+            padding: 130px;
+            text-align: center;
+            color: #fbe9ee; /* Texto claro */
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            gap: 7px; /* Espaciado entre imágenes */
+            padding: 15px;
+        }
+
+        .photo-grid img {
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Ajuste al tamaño del contenedor */
+            height: 600px; /* Altura uniforme */
+            object-fit: cover; /* Asegurar recorte adecuado */
+        }
+
+        footer {
+            background: #811c3b;
+            color: #fbe9ee;
+            text-align: center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Acerca de Ti</h1>
+    </header>
+    <main>
+        <section id="musica">
+            <h2>Música Favorita</h2>
+            <ul>
+                <li>🎵 Lana Del Rey - Summertime Sadness</li>
+            </ul>
+            <div class="image-container">
+                <img src="albun.jpeg" width="200" alt="Imagen del Álbum">
+            </div>
+            <button id="play-button">▶️ Reproducir Música</button>
+            <audio id="audio" src="musica.mp3"></audio>
+        </section>
+
+        <script>
+            const playButton = document.getElementById('play-button');
+            const audio = document.getElementById('audio');
+
+            playButton.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    playButton.textContent = '⏸️ Pausar Música';
+                } else {
+                    audio.pause();
+                    playButton.textContent = '▶️ Reproducir Música';
+                }
+            });
+        </script>
+
+        <section id="pasatiempos">
+            <h2>Gustos y Pasatiempos</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>📚 Película
+                            <div class="image-container">
+                                <img src="s.jpg" width="250" alt="Series y películas">
+                            </div>
+                        </td>
+                        <td>🏃‍♀️ Bailar
+                            <div class="image-container">
+                                <img src="p.png" width="170" alt="Deporte">
+                            </div>
+                        </td>
+                        <td> Esposo 
+                            <div class="image-container">
+                                <img src="f.jpg" width="200" alt="Fotografía">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>🧑‍🍳 Cocina
+                            <div class="image-container">
+                                <img src="gc.jpg" width="250" alt="Cocina">
+                            </div>
+                        </td>
+                        <td>Color favorito
+                            <div class="image-container">
+                                <img src="cf.jpg" width="200" alt="Color favorito">
+                                <p>Morado y Guinda</p>
+                            </div>
+                        </td>
+                        <td>❤️ Novio
+                            <div class="image-container">
+                                <img src="n.jpg" width="250" alt="Novio">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="album">
+            <h2>Álbum de Fotos</h2>
+            <div class="photo-grid">
+                <img src="i1.jpg" alt="Foto 1">
+                <img src="i2.jpg" alt="Foto 2">
+                <img src="i3.jpg" alt="Foto 3">
+                <img src="i4.jpg" alt="Foto 4">
+                <img src="i5.jpg" alt="Foto 5">
+                <img src="i6.jpg" alt="Foto 6">
+                <img src="i7.jpg" alt="Foto 7">
+                <img src="i8.jpg" alt="Foto 8">
+                <img src="i9.jpg" alt="Foto 9">
+                <img src="i10.jpg" alt="Foto 10">
+                <img src="i11.jpg" alt="Foto 11">
+                <img src="i12.jpg" alt="Foto 12">
+                <img src="i13.jpg" alt="Foto 13">
+                <img src="i14.jpg" alt="Foto 14">
+                <img src="i15.jpg" alt="Foto 15">
+            </div>
+            <p>"Sólo con el corazón se puede ver bien, lo esencial es invisible para los ojos..."</p>
+            <h3>Hasta aquí mi reporte… seguimos pendientes.</h3>
+            <div class="image-container">
+                <center><img src="bodo.jpg" width="200" alt="Romantic Image"></center>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
